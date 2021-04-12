@@ -36,7 +36,7 @@ int main()
 
     //Gallon to Liters
     /*
-    * //print name of program
+    //print name of program
     cout << "Gallons Converter" << endl << endl;
 
     //get gallons from user
@@ -46,9 +46,17 @@ int main()
 
     //convert gallons to liters
     double liters = gallons * 3.7854;
+    liters = round(liters * 100) / 100; //rounds the result
+    double quarts = gallons * 4;
+    quarts = round(quarts * 100) / 100;
+    double ounces = gallons * 128;
+    ounces = round(ounces * 100) / 100;
 
     //write output to console
-    cout << "Liters:    " << liters << endl << endl << "Bye!" << endl << endl;
+    cout << "Liters:\t" << liters << endl 
+        << "Quarts:\t" << quarts << endl 
+        << "Ounces:\t" << ounces << endl 
+        << "Bye!" << endl << endl;
     */
     
     //Circle Calculator
@@ -97,6 +105,7 @@ int main()
     */
     
     //Guest Book
+    ///*
     cout << "Guest Book\n\n";
 
     string first_name;
@@ -113,8 +122,23 @@ int main()
     cout << "Last name:\t";
     getline(cin, last_name);      //get entire line
 
+    string address;
+    cout << "Street Address:\t";
+    getline(cin, address);
+
+    string state;
+    cout << "State:\t";
+    state = cin.get();
+    state += cin.get();
+    cin.ignore(100, '\n');        //discard leftover chars and newline
+
+    string postal_code;
+    cout << "Postal Code:\t";
+    cin >> postal_code;           //get first string only
+    cin.ignore(100, '\n');        //discard leftover chars and newline
+
     string city;
-    cout << "City:\t\t";
+    cout << "City:\t";
     getline(cin, city);           //get entire line
 
     string country;
@@ -122,8 +146,29 @@ int main()
     getline(cin, country);        //get entire line
 
     cout << "\nENTRY\n"           //display the entry
-        << first_name + ' ' + middle_initial + ". " + last_name + '\n'
-        << city + ", " + country + "\n\n";
+        << "Name:\t" + first_name + ' ' + middle_initial + ". " + last_name + '\n'
+        << "Street Address:\t" + address + '\n'
+        << "City:\t" + city + '\n'
+        << "State:\t" + state + '\n'
+        << "Postal Code:\t" + postal_code + '\n'
+        << "Country:\t" + country + '\n';
+
+    //*/
+    
+    //Rectangle Calculator
+    /*
+    double height;
+    double width;
+    cout << "Rectangle Calculator\n";
+    cout << "Enter height and Width\t";
+    cin >> height >> width;
+    cout << "\nRectangle Area:\t" << height * width;
+    */
+
+    
+
+
+
     
 }
 
