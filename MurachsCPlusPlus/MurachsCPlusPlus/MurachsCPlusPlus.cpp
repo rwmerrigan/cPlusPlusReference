@@ -105,7 +105,7 @@ int main()
     */
     
     //Guest Book
-    ///*
+    /*
     cout << "Guest Book\n\n";
 
     string first_name;
@@ -153,7 +153,7 @@ int main()
         << "Postal Code:\t" + postal_code + '\n'
         << "Country:\t" + country + '\n';
 
-    //*/
+    */
     
     //Rectangle Calculator
     /*
@@ -165,10 +165,89 @@ int main()
     cout << "\nRectangle Area:\t" << height * width;
     */
 
+    //Invoice 2.0
+    /*
+    cout << "Invoice Total Calculator 2.0 \n\n";
+
+    //get input
+    char customer_type;
+    cout << "Enter customer type (r/w): ";
+    cin >> customer_type;
+
+    double subtotal;
+    cout << "Enter a subtotal: ";
+    cin >> subtotal;
+
+    //determine discount based on subtotal
+    double discount_percent;
+    if (tolower(customer_type) == 'r') { //Retail
+        if (subtotal < 100) {
+            discount_percent = .0;
+        }
+        else if (subtotal >= 100 && subtotal < 250) {
+            discount_percent = .1;
+        }
+        else {
+            discount_percent = .05;
+        }
+    }
+    else if (tolower(customer_type) == 'w') { //Wholesale
+        if (subtotal < 500) {
+            discount_percent = .4;
+        }
+        else {
+            discount_percent = .5;
+        }
+    }
+    else {                            //Other
+        discount_percent = .0;
+    }
+
+   
+    //calculate and round results
+    double discount_amount = subtotal * discount_percent;
+    discount_amount = round(discount_amount * 100) / 100;
+
+    double invoice_total = subtotal - discount_percent;
+    invoice_total = round(invoice_total * 100) / 100;
+
+    //write results data to the console
+    cout << "Discount percent: " << discount_percent << endl
+        << "Discount amount:  " << discount_amount << endl
+        << "Invoice total:    " << invoice_total << endl << endl;
+    */
+
+    //Switch Statement for a menu system
     
+    //display menu
+    cout << "1. List all movies" << endl
+        << "2. Add a movie" << endl
+        << "3. Exit" << endl << endl;
+    
+    //get menu item from user
+    cout << "Menu item: ";
+    int menu_item;
+    cin >> menu_item;
 
+    //execute the correct code for the menu item 
+    switch (menu_item) {
+        case 1:
+            cout << "MOVIE LIST" << endl;
+            //all movies would go here
+            break;
+        case 2:
+            cout << "ADD A MOVIE" << endl;
+            //code that adds a movie goes here
+            break;
+        case 3:
+            cout << "BYE!";
+            break;
+        default:
+            cout << "Invalid menu item! Try again." << endl;
+            break;
+    }
 
-
+    
     
 }
 
