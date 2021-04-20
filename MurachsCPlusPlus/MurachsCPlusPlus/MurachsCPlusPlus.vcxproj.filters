@@ -22,4 +22,7 @@
   <ItemGroup>
     <None Include="README.md" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Old_Code.txt" />
+  </ItemGroup>
 </Project>
